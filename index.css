@@ -1,0 +1,80 @@
+body{
+   background-color: black;
+}
+
+h1{
+   color: white;
+   text-align: center;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   animation: aparecer 1.5s ease-out;
+}
+
+.reloj {
+   position: relative;
+   width: 400px;
+   height: 400px;
+   border: 2px solid white;
+   border-radius: 50%;
+   margin: 0 auto;
+   background-image: url(einstein.avif);
+   background-size: cover;
+
+}
+
+#minutos {
+   transform-origin: 200px 200px;
+   animation: rotarMinutos 900s infinite linear;
+}
+
+@keyframes rotarMinutos {
+   from { transform: rotate(0deg); }
+   to { transform: rotate(360deg); }
+}
+
+#segundos {
+   transform-origin: 200px 200px;
+   animation: rotarSegundos 30s infinite linear;
+}
+
+@keyframes rotarSegundos {
+   from { transform: rotate(0deg); }
+   to { transform: rotate(360deg); }
+}
+
+.tiempo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   background-color: white;
+   color: black;
+   padding: 10px;
+   border-radius: 5px;
+   display: none;
+   pointer-events: none;
+}
+
+@keyframes moverDerecha {
+   from {
+      opacity: 0;
+   }
+   to { 
+      opacity: 1;
+      transform: translateX(10px) 
+   }
+}
+
+.reloj:hover .tiempo {
+   display: block;
+   animation: moverDerecha 1s linear;
+}
+
+@keyframes aparecer {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
