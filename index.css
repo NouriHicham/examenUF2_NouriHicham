@@ -23,7 +23,7 @@ h1{
 
 #minutos {
    transform-origin: 200px 200px;
-   animation: rotarMinutos 900s infinite linear;
+   animation: rotarMinutos 100s infinite linear;
 }
 
 @keyframes rotarMinutos {
