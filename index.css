@@ -23,22 +23,17 @@ h1{
 
 #minutos {
    transform-origin: 200px 200px;
-   animation: rotarMinutos 100s infinite linear;
+   animation: rotar 200s infinite linear;
 }
 
-@keyframes rotarMinutos {
+@keyframes rotar {
    from { transform: rotate(0deg); }
    to { transform: rotate(360deg); }
 }
 
 #segundos {
    transform-origin: 200px 200px;
-   animation: rotarSegundos 30s infinite linear;
-}
-
-@keyframes rotarSegundos {
-   from { transform: rotate(0deg); }
-   to { transform: rotate(360deg); }
+   animation: rotar 30s infinite linear;
 }
 
 .tiempo {
@@ -60,13 +55,29 @@ h1{
    }
    100% { 
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateX(10px);
+   }
+}
+
+@keyframes desaparecer {
+   0% {
+      opacity: 1;
+      transform: translateX(10px) 
+   }
+   100% { 
+      opacity: 0;
+      transform: translateX(-20px);
    }
 }
 
 .reloj:hover .tiempo {
    display: block;
-   animation: moverDerecha 1s linear ;
+   animation: moverDerecha 1s linear forwards;
+}
+
+.reloj:not(:hover) .tiempo{
+   display: block;
+   animation: desaparecer 1s forwards;
 }
 
 @keyframes aparecer {
