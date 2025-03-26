@@ -54,18 +54,19 @@ h1{
 }
 
 @keyframes moverDerecha {
-   from {
+   0% {
       opacity: 0;
+      transform: translateX(-20px) 
    }
-   to { 
+   100% { 
       opacity: 1;
-      transform: translateX(10px) 
+      transform: translateX(0px);
    }
 }
 
 .reloj:hover .tiempo {
    display: block;
-   animation: moverDerecha 1s linear;
+   animation: moverDerecha 1s linear ;
 }
 
 @keyframes aparecer {
